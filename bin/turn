@@ -5,10 +5,16 @@ board = [" "," "," "," "," "," "," "," "," "]
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
 
-puts "Please enter 1-9:"
-input = gets.strip
-index = input_to_index(input)
+def ask
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+end
+
+ask
 if valid_move?(board,index)
   move(board, index)
+else
+  ask
 end
 display_board(board)
