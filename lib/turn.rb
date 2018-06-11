@@ -7,21 +7,24 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
-  if index.between?(0,9)
-    return true
-  else
+  if !(index.between?(0,10)) || index == nil
     return false
+  elsif board[index] == "X" || board[index] == "O"
+    return false
+  else
+    return true
   end
 end
 
 def position_taken?(board, index)
-  counter = 0
-  until counter == 8
-    if board[counter] == "X" || board[counter] == "O"
-      return false
-    else
-      counter += 1
-    end
+  if board[index] == " "
+    return false
+  elsif board[index] == ""
+    return false
+  elsif board[index] == nil
+    return false
+  elsif board[index] == "X" || board[index] == "O"
+    return true
   end
 end
 
