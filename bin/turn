@@ -14,8 +14,9 @@ while counter < 8
   if valid_move?(board,index)
     move(board, index)
     counter += 1
+    display_board(board)
   else
     puts "Try again:"
   end
 end
-display_board(board)
+
