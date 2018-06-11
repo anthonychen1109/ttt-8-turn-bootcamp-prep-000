@@ -4,17 +4,18 @@ board = [" "," "," "," "," "," "," "," "," "]
 
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
+counter = 0
 
-def ask
+while counter < 8
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-end
 
-ask
-if valid_move?(board,index)
-  move(board, index)
-else
-  ask
+  if valid_move?(board,index)
+    move(board, index)
+    counter += 1
+  else
+    puts "Try again:"
+  end
 end
 display_board(board)
