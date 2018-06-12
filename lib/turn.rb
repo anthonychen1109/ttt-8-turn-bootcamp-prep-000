@@ -28,8 +28,14 @@ def position_taken?(board, index)
   end
 end
 
-def move(board, index)
-  board[index] = "X"
+def move(board, index, counter)
+  puts "#{counter}"
+  if counter % 2 == 0
+    symbol = "X"
+  else
+    symbol = "O"
+  end
+  board[index] = symbol
 end
 
 def input_to_index(index)
