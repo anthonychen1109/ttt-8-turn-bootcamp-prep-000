@@ -29,7 +29,6 @@ def position_taken?(board, index)
 end
 
 def move(board, index, counter)
-  puts "#{counter}"
   if counter % 2 == 0
     symbol = "X"
   else
